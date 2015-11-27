@@ -49,7 +49,26 @@
         class="editableForm">
         <f:content>
           <Label text="{i18n>PLANS}" />
-          <Input value="{PLANS}" />
+          <Input id="PlansInput"
+        type="Text"
+        placeholder="Enter Position ..." 
+        showSuggestion="true"
+        showValueHelp="true"
+        valueHelpRequest="handleValueHelpPositions" /> 
+        <Label text="{i18n>PERSA}" />
+          <Input id="PersaInput"
+        type="Text"
+        placeholder="Enter Div. Personal ..." 
+        showSuggestion="true"
+        showValueHelp="true"
+        valueHelpRequest="handleValueHelpPersonnelArea" /> 
+        <Label text="{i18n>PERSG}" />
+          <Input id="PersgInput"
+        type="Text"
+        placeholder="Enter Group Personal ..." 
+        showSuggestion="true"
+        showValueHelp="true"
+        valueHelpRequest="handleValueHelpPersonnelGroup" />
         </f:content>
       </f:SimpleForm>
     </l:content>

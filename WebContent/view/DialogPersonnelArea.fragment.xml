@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+  <SelectDialog
+    title="Personnel Area"
+    class="sapUiPopupWithPadding"
+    items="{/HtnmWerksSet}"
+    search="_handleValueHelpSearchPersonnelArea"
+    confirm="_handleValueHelpClosePersonnelArea"
+    cancel="_handleValueHelpClosePersonnelArea">
+    <StandardListItem
+      iconDensityAware="false"
+      iconInset="false"
+      title="{Persa}"
+      description="{Name1}" />
+  </SelectDialog>
+</core:FragmentDefinition>
