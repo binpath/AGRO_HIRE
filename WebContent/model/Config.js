@@ -6,6 +6,15 @@ model.Config = {};
  * Supply here the service url of the service to fetch data from
  */
 model.Config.getServiceUrl = function () {
+	
+	var sServiceUrl = "/sap/opu/odata/sap/ZHCM_HIRE_SRV/";
+	if (window.location.hostname == "localhost") {
+	      return "proxy" + sServiceUrl;
+	  } else {
+	      return sServiceUrl;
+	  }
+	
+	
 	return null;
 };
 
