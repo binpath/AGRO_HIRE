@@ -72,7 +72,7 @@
         </f:content>
       </f:SimpleForm>	
     </l:content>
-      <Panel>
+    <Panel>
     <headerToolbar>
       <Toolbar height="3rem">
         <Title text="Basic Pay"/>
@@ -80,13 +80,73 @@
         <Button icon="sap-icon://add" />
       </Toolbar>
     </headerToolbar>
-    <content>
-      <l:HorizontalLayout>
-        <Image src="{img>/products/pic1}" densityAware="false" width="10em" />
-      </l:HorizontalLayout>
-      <Text text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat" />
-    </content>
-  </Panel>
+    <Label text="{i18n>TRFAR}" />
+          <Input id="TypeInput"
+        type="Text"
+        placeholder="Ingresar Convenio ..." 
+        showSuggestion="true"
+        showValueHelp="true"
+        valueHelpRequest="handleValueHelpClase" /> 
+     <Table id="idP0008Table"
+    inset="false"
+    items="{
+      path: '/ProductCollection',
+      sorter: {
+        path: 'Name'
+      }
+    }">
+    <columns>
+      <Column
+        width="12em">
+        <Text text="Product" />
+      </Column>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="true">
+        <Text text="Supplier" />
+      </Column>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="true"
+        hAlign="Right">
+        <Text text="Dimensions" />
+      </Column>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="true"
+        hAlign="Center">
+        <Text text="Weight" />
+      </Column>
+      <Column
+        hAlign="Right">
+        <Text text="Price" />
+      </Column>
+    </columns>
+    <items>
+      <ColumnListItem>
+        <cells>
+          <ObjectIdentifier
+            title="{Name}"
+            text="{ProductId}"/>
+          <Text
+            text="{SupplierName}" />
+          <Text
+            text="{Width} x {Depth} x {Height} {DimUnit}" />
+          <ObjectNumber
+            number="{WeightMeasure}"
+            unit="{WeightUnit}"
+            state="{
+              path: 'WeightMeasure',
+              formatter: 'sap.m.sample.Table.Formatter.weightState'
+            }" />
+          <ObjectNumber
+          number="{Price}"
+          unit="{CurrencyCode}" />
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
+    </Panel>
   </l:Grid>
 
 </core:View>
